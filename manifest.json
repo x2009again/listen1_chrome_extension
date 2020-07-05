@@ -20,24 +20,21 @@
     "commands": {
         "play_next": {
             "suggested_key": {
-                "default": "MediaNextTrack"
+                "default": "Ctrl+Shift+Right"
             },
-            "description": "Play next song.",
-            "global": true
+            "description": "Play next song."
         },
         "play_prev": {
             "suggested_key": {
-                "default": "MediaPrevTrack"
+                "default": "Ctrl+Shift+Left"
             },
-            "description": "Play previous song.",
-            "global": true
+            "description": "Play previous song."
         },
         "play_pause": {
             "suggested_key": {
-                "default": "MediaPlayPause"
+                "default": "Ctrl+Shift+Space"
             },
-            "description": "Toggle play pause state.",
-            "global": true
+            "description": "Toggle play pause state."
         }
     },
     "content_scripts": [{

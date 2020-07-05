@@ -102,9 +102,9 @@ const urls = ['*://music.163.com/*', '*://*.xiami.com/*', '*://i.y.qq.com/*', '*
 try {
   chrome.webRequest.onBeforeSendHeaders.addListener(hack_referer_header, {
     urls: urls,
-  }, ['requestHeaders', 'blocking','extraHeaders']);
+  }, ['requestHeaders', 'blocking', 'extraHeaders']);
 }
-catch(err) {
+catch (err) {
   // before chrome v72, extraHeader is not supported
   chrome.webRequest.onBeforeSendHeaders.addListener(hack_referer_header, {
     urls: urls,
@@ -123,7 +123,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 // at end of background.js
 chrome.commands.onCommand.addListener((command) => {
-  const [viewWindow] = chrome.extension.getViews().filter(p => p.location.href.endsWith('listen1.html'));
+  const [viewWindow] = chrome.extension.getViews().filter(p => p.location.href.endsWith('listen1.html') || p.location.href.endsWith('listen1.html#'));
 
   switch (command) {
     case 'play_next':
@@ -136,6 +136,6 @@ chrome.commands.onCommand.addListener((command) => {
       viewWindow.document.querySelector('.play').click();
       break;
     default:
-      // console.log('不支持的快捷键')
+    // console.log('不支持的快捷键')
   }
 });
