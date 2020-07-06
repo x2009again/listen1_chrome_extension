@@ -1512,14 +1512,19 @@ const main = () => {
           if ((typeof chrome) === 'undefined') {
             // normal window for link
             const { BrowserWindow } = require('electron').remote;
+            var path = require('path')
+            var iconPath = path.join(__dirname, '/images/logo.png');
+            console.log("iconPath:"+iconPath);
             let win = new BrowserWindow({
               width: 1000,
               height: 670,
+              icon: iconPath,
             });
             win.on('closed', () => {
               win = null;
             });
             win.loadURL(scope.url);
+            
             return;
           }
           $window.open(scope.url, '_blank');
