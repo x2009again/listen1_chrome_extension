@@ -981,7 +981,6 @@ const main = () => {
       });
 
       $scope.gotoAnchor = (newHash) => {
-        var test = $location.hash();
         if ($location.hash() !== newHash) {
           // set the $location.hash to `newHash` and
           // $anchorScroll will automatically scroll to it
@@ -994,7 +993,7 @@ const main = () => {
         }
         $timeout(function () {
           $location.hash("");
-        }, 15);
+        }, 100);
       };
 
       $scope.togglePlaylist = () => {
